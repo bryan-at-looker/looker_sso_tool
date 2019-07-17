@@ -276,8 +276,8 @@ window.addEventListener("message",function(event){
                 }
             }
         if(data.type=="drillmenu:click") {
-            let key = data.url.split('::')[0]
-            let value = decodeURI(data.url.split('::')[1])
+            let key = data.url.split('::')[1].split('=')[0]
+            let value = data.url.split('::')[1].split('=')[1]
             latest_query_params[key] = value
             console.log(latest_query_params)
             var my_request = {
